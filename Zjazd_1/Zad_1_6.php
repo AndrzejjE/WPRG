@@ -24,9 +24,9 @@ if (isset($_POST['submit'])) {
     $c = $_POST['c'];
 
     if ($a + $b > $c && $a + $c > $b && $b + $c > $c) {
-        echo "Można zbudować trójkąt. \naaaaaaa";
-    }else {
-        echo "Nie mozna zbudować trójkąta z podanych boków.";
+        echo "Można zbudować trójkąt.";
+    } else {
+        echo "BŁĄD: Nie mozna zbudować trójkąta z podanych boków.";
     }
 
 }
