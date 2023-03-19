@@ -1,6 +1,6 @@
 <html lang="pl">
 <head>
-    <title>Zad_1_7</title>
+    <title>Zad_1_8</title>
 </head>
 <body>
 <form method="post">
