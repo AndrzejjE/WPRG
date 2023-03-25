@@ -21,7 +21,7 @@
         <input type="number" name="b" required>
     </label><br>
 
-    <input type="submit" name="submit" value="Oblicz pole">
+    <input type="submit" name="submit" value="Oblicz">
 </form>
 <?php
 if (isset($_POST['submit'])) {
