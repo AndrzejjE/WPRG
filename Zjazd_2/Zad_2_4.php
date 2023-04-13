@@ -1,26 +1,40 @@
-<html lang="pl">
+<!DOCTYPE html>
+<html>
 <head>
-    <title>Zad_2_1</title>
+    <title>Zad_2_4</title>
 </head>
 <body>
-<h1>Prosty kalkulator</h1>
-
-<form method="post">
-
-    <label for="num">Liczba:
-        <input type="number" name="num" required>
-    </label><br>
-<br>
-    <input type="submit" name="submit">
+<form method="post" action="">
+    Wpisz liczbę: <input type="number" name="number" required>
+    <input type="submit" value="Sprawdź">
 </form>
+
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if(isset($_POST['number'])){
+    $number = intval($_POST['number']);
+    if($number <= 0){
+        echo "Podaj dodatnią liczbę całkowitą.";
+    } else if(isPrimeNum($number)){
+        echo "Liczba ".$number." jest liczbą pierwszą.";
+    } else {
+        echo "Liczba ".$number." nie jest liczbą pierwszą.";
+    }
+}
 
-    $num = $_POST['num'];
+function isPrimeNum($number){
+    $iterations = 0;
+    if($number == 1) return false;
+    if($number == 2){ echo "Liczba iteracji: 1. "; return true;}
+    if($number % 2 == 0) return false;
 
-    if (is_int($num)) echo "to jest liczba całkowita!";
-    else echo "to nie jest liczba całkowita";
-
+    for($i = 3; $i <= ceil(sqrt($number)); $i+=2){
+        $iterations++;
+        if($number % $i == 0){
+            return false;
+        }
+    }
+    echo "Liczba iteracji: ".$iterations . " ";
+    return true;
 }
 ?>
 </body>
